@@ -1,0 +1,52 @@
+#include <iostream>
+#include "tarray.h"
+
+template<class T>
+// makes an object with a dynamic array of size 5
+Tarray<T> Tarray<T>::Tarray(){
+    used = 0;
+    capacity = 5;
+    current_index = 0;
+}
+// puts the item into the next available spot in the 
+// array. If the array is full, resize is called.
+template<class T>
+void Tarray<T>::add(T item){
+    data[sizeof(data) - 1] = item;
+}
+
+// iterator functions
+// places current_index at the beginning of the array
+template<class T>
+void Tarry<T>::start(){
+    current_index = 0;
+}
+
+// returns true if the current index is less than used
+template<class T>
+bool Tarry<T>::is_item()const{
+    return (current_index < used;)
+}
+
+// moves current index to the next array location
+template<class T>
+void Tarry<T>::advance(){
+    current_index = curernt_index + 1;
+}
+
+// returns the array item referenced by current index
+template<class T>
+T Tarry<T>::current()const{
+    reutrn(data[current_index];)
+}
+
+// removes the item at the current index
+template<class T>
+void Tarry<T>::remove_current(){
+    for(int i = 0; i < used; i++){
+        if(data[i] == data[current_index]){
+            data[i] = data[current_index + 1];
+            current_index == current_index + 1;
+        }
+    }
+}
